@@ -16,18 +16,13 @@ const UserAPI =  {
        SignUpUser : async (SignUpData) => {
           try{
             const response = await axiosInstance.post('/signup', SignUpData)
-            if(response.data.status){
-           
             console.log(response.data)
             return response.data
-            }
-            else{
-                throw new Error(response.data)
-            }
-           
         }
          catch(error){
-                throw new Error("Login Error: " + error.message)
+            // Extract the error message from the backend response if available
+            const errorMessage = error.response?.data?.message || "Signup Error: " + error.message;
+            throw new Error(errorMessage)
             }
     }
     
