@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 
-const GroupSchema =  new Schema({
-
+const GroupSchema = new mongoose.Schema({
  from_user: {
       type: String,
       trim: true
@@ -19,7 +18,6 @@ const GroupSchema =  new Schema({
       type: Date,
       default: Date.now
     }
-
 })
 
 module.exports = mongoose.model("GroupMsg", GroupSchema)

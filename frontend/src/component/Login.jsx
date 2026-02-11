@@ -20,6 +20,8 @@ function Login() {
             const response = await UserAPI.loginUser(loginDetails);
             console.log("Login successful:", response);
             setError("");
+            localStorage.setItem('username', loginDetails.username);
+            navigate("/chatroom")
         } catch (error) {
             console.error("Login error:", error);
         }
