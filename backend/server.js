@@ -60,17 +60,17 @@ mongoose
         console.log(`Client ${socket.id} joined room: ${room}`);
         io.to(room).emit("message", {
           room: room,
-          message: `A user joined ${room}`
+          message: ` user joined ${room}`
         });
       });
 
       socket.on("chatMessage", async (msg) => {
         console.log("Received message:", msg);
         
-        // Save message to database
+        
         try {
           const newMsg = new GroupMsg({
-            from_user: msg.username || "Anonymous",
+            from_user: msg.username,
             room: msg.room,
             message: msg.message
           });
