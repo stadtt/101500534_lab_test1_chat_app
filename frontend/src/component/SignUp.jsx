@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState} from "react";
 import UserAPI from "../api/UserApi/UserAPI";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function SignUp() {
-    const navigate = useNavigate();
     const [error, setError] = useState("");
     const [formData, setFormData] = useState({ username: "", password: "", firstname:"",lastname:""});
 
@@ -82,9 +80,6 @@ function SignUp() {
 
                     <button type="submit" className="btn btn-primary w-100">
                         Sign Up
-                    </button>
-                    <button type="button" className="btn btn-secondary w-100 mt-2" onClick={() => navigate("/login")}>
-                        Already have an account? Login
                     </button>
                 </form>
             </div>

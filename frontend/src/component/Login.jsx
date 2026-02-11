@@ -21,8 +21,7 @@ function Login() {
             console.log("Login successful:", response);
             setError("");
         } catch (error) {
-            console.log(error);
-            setError(error.message || "Login failed");
+            console.error("Login error:", error);
         }
     };
 
