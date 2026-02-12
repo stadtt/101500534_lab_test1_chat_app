@@ -16,7 +16,7 @@ const Chatroom = () => {
   const [input, setInput] = useState("");
   const [socket, setSocket] = useState(null);
 
-  // Load persisted messages when room changes
+  
   useEffect(() => {
     const loadMessages = async () => {
       try {
@@ -105,7 +105,7 @@ const Chatroom = () => {
         ))}
       </div>
 
-      {/* Chat messages */}
+      
       <div
         className="border rounded p-3 mb-3 bg-light"
         style={{ height: "300px", overflowY: "scroll" }}
@@ -117,7 +117,6 @@ const Chatroom = () => {
         ))}
       </div>
 
-      {/* Input and send */}
       <div className="input-group mb-3">
         <input
           type="text"
@@ -132,7 +131,7 @@ const Chatroom = () => {
         </button>
       </div>
 
-      {/* Logout button */}
+      
       <button className="btn btn-danger w-40" onClick={handleLogout}>
         Logout
       </button>

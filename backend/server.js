@@ -79,7 +79,7 @@ mongoose
           console.error("Error saving message:", err);
         }
         
-        // Emit to room
+        
         io.to(msg.room).emit("message", msg);
       });
 
